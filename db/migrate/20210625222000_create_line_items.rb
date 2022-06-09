@@ -1,11 +1,11 @@
-class CreateLineItems < ActiveRecord::Migration[6.1]
+
+class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :line_items do |t|
-      t.references :order, index: true, foreign_key: true
-      t.references :product, index: true, foreign_key: true
-      t.integer :quantity
-      t.integer :item_price_cents
-      t.integer :total_price_cents
+    create_table :users do |t|
+      t.string :first_name
+      t.string :last_name
+      t.string :email
+      t.string :password_digest
 
       t.timestamps null: false
     end
